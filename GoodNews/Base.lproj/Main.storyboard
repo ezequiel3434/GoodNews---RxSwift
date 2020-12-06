@@ -16,13 +16,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uvV-QN-BUE">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleTableViewCell" rowHeight="80" id="uvV-QN-BUE" customClass="ArticleTableViewCell" customModule="GoodNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uvV-QN-BUE" id="LMT-hP-dYg">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uvV-QN-BUE" id="LMT-hP-dYg" customClass="ArticleTableViewCell" customModule="GoodNews" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="9Pa-5l-oaH">
+                                            <rect key="frame" x="24" y="15" width="362" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwa-FW-Cnj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="362" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="374" id="fh9-bM-xnP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNF-wI-o2b">
+                                                    <rect key="frame" x="0.0" y="33" width="362" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="374" id="EhQ-le-qeI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9Pa-5l-oaH" secondAttribute="trailing" constant="8" id="7PN-FU-7aT"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="9Pa-5l-oaH" secondAttribute="bottom" constant="4" id="Kbl-Fl-fnl"/>
+                                        <constraint firstItem="9Pa-5l-oaH" firstAttribute="leading" secondItem="LMT-hP-dYg" secondAttribute="leadingMargin" constant="4" id="Zlv-EA-s0m"/>
+                                        <constraint firstItem="9Pa-5l-oaH" firstAttribute="top" secondItem="LMT-hP-dYg" secondAttribute="topMargin" constant="4" id="vcX-pk-8Cr"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="PNF-wI-o2b" id="qTO-hS-zju"/>
+                                    <outlet property="titleLabel" destination="Bwa-FW-Cnj" id="FX3-8t-Goe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

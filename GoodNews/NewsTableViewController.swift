@@ -18,6 +18,32 @@ class NewsTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.setStatusBar(backgroundColor: UIColor(displayP3Red: 47/255, green: 54/255, blue: 64/255, alpha: 1.0))
+        
+        populateNews()
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articles.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as? ArticleTableViewCell else {
+            fatalError("ArticleTableViewCell does not exist")
+        }
+        cell.titleLabel.text = articles[indexPath.row].title
+        cell.descriptionLabel.text = articles[indexPath.row].description
+        
+        return cell
+        
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     private func populateNews(){
